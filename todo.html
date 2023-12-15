@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h1><i class="fa fa-list"></i>ToDo LisT</h1>
+        <div class="add">
+            <input type="text" id="item" placeholder="Add item">
+            <button id="button"><i class="fa fa-plus"></i>Add</button>
+        </div>
+        <div class="contant">
+            <ul></ul>
+        </div>
+    </div>
+    <script >
+        $(document).ready(
+            function () {
+                $('#button').click(
+                    function () {
+                        var todo = $('#item').val();
+                        $('ul').append('<li style=width:347px;>' + '<i class="fa fa-times"></i>' + todo + '</li>');
+                    });
+
+                $(document).on('click', 'li', function () {
+                    $(this).hide("slow");
+                });
+
+                $('input').focus(function () {
+                    $(this).val("");
+                });
+            }
+        );
+    </script>
+</body>
+
+</html>
